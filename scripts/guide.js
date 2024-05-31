@@ -29,6 +29,21 @@ function animateText() {
     const charItem = charArray[i];
     title.innerHTML += charItem;
     i++;
-  }, 100);
+  }, 60);
 }
 setTimeout(animateText, 1500);
+
+// download page smooth
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.header');
+  setTimeout(() => {
+    header.classList.add('visible');
+  }, 600);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelector('.guide-card-wrap');
+  setTimeout(() => {
+    cards.classList.add('visible');
+  }, 1000);
+});

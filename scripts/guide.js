@@ -46,4 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     cards.classList.add('visible');
   }, 1000);
-});
+});   
+
+//footer 
+

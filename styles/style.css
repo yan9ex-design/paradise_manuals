@@ -1,12 +1,12 @@
 @font-face {
-    font-family: "MontserratThin";
-    src: url(/fonts/Montserrat-Thin.ttf) format("truetype");
+    font-family: "Montserrat-Thin";
+    src: url('/fonts/Montserrat-Thin.ttf') format("truetype");
     font-style: normal;
     font-weight: 200;
 }
 @font-face {
-    font-family: "MontserratRegular";
-    src: url(/fonts/Montserrat-Regular.ttf) format("truetype");
+    font-family: "Montserrat-Regular";
+    src: url('/fonts/Montserrat-Regular.ttf') format("truetype");
     font-style: normal;
     font-weight: 400;
 }
@@ -17,7 +17,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    font-family: "MontserratRegular";
+    font-family: "Montserrat-Regular";
 }
 *,
 ::before,
@@ -64,7 +64,7 @@ body{
 .log__title{
     text-transform: uppercase;
     color: #ffffff;
-    font-family: "MontserratThin";
+    font-family: "Montserrat-Thin";
     font-size: 44px;
     letter-spacing: 27px;
 }
@@ -102,7 +102,7 @@ input::placeholder{
     margin-bottom: 57px;
 }
 .btn{
-    font-family: "MontserratThin";
+    font-family: "Montserrat-Thin";
     width: 224px;
     min-height: 60px;
     border: #00FF1E solid 1px;
@@ -190,7 +190,7 @@ input::placeholder{
     margin: 0px;
     color: #ffffff;
     font-size: 58px;
-    font-family: "MontserratThin";
+    font-family: "Montserrat-Thin";
     letter-spacing: 10px;
 }
 .guide-card-wrap{
@@ -241,7 +241,7 @@ input::placeholder{
     margin: 0px;
     color: #727272;
     font-size: 20px;
-    font-family: "MontserratThin";
+    font-family: "-Thin";
 }
 .footer-container{
     background-color: #000000;

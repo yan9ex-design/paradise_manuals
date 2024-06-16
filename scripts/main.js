@@ -33,27 +33,7 @@ function animateText() {
 
 setTimeout(animateText, 1000);
 //temp passwor and login 
-const tempUsername = 'temp';
-const tempPassword = 'temp';
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
 
-  const formData = new FormData(form);
-  const username = formData.get('username');
-  const password = formData.get('password');
-
-  // Проверяем, что поля заполнены
-  if (username && password) {
-    // Проверяем, соответствуют ли введённые данные временному логину и паролю
-    if (username === tempUsername && password === tempPassword) {
-      // Если да, перенаправляем пользователя на страницу guide.html
-      window.location.href = 'guide.html';
-    } else {
-      // Если нет, выводим сообщение об ошибке
-      alert('Неверный логин или пароль');
-    }
-  }
-});
 // Получаем data
 const form = document.getElementById('form');
 const button = document.getElementById('button-log');
@@ -92,3 +72,39 @@ passwordInput.addEventListener('keydown', (e) => {
   }
 });
 
+//бд
+const form_1 = document.getElementById('form');
+const button_1 = document.getElementById('button-log');
+const { getUserByUsernameAndPassword } = require('./db');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  getUserByUsernameAndPassword(username, password).then((user) => {
+    if (user.length > 0) {
+      // User exists, redirect to guide.html
+      window.location.href = 'guide.html';
+    } else {
+      // User does not exist, show error message
+      alert('Неверный логин или пароль');
+    }
+  }).catch((err) => {
+    console.error(err);
+  });
+});
+
+const sql = require('mssql');
+const config = require('./db').config;
+
+sql.connect(config, function(err) {
+    if(err) {
+        console.log("Error connecting to the database:");
+        console.log(err);
+    } else {
+        console.log("Connected to the database!");
+        sql.close();
+    }
+});
